@@ -1,0 +1,8 @@
+user_id
+user_name
+user_reports
+user_assigns
+user_creates
+user_permissions
+user_activity
+user_email

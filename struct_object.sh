@@ -1,0 +1,17 @@
+object_id
+object_type
+object_priority
+object_tags
+object_team
+object_points
+object_status
+object_resolution
+object_fixversion
+object_description
+object_links
+object_reporter
+object_assignee
+object_votes
+object_created
+object_updated
+object_project
