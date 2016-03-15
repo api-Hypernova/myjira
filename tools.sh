@@ -1,12 +1,10 @@
 #!/bin/bash
 
 
-export include()
-{
-        source "${install_dir}/$1.sh"
-}
+#alias include="source '${install_dir}/$1.sh'"
 
-export tools_error_throw()
+
+tools_error_throw()
 {
         printf "throw(): "
         for x in $#; do
@@ -14,9 +12,10 @@ export tools_error_throw()
         done
         exit 1
 }
+export -f tools_error_throw
 
 
-export tools_property_set() #meant to operate on name value pairs
+tools_property_set() #meant to operate on name value pairs
 {
     name="$1"
     value="$2"
@@ -28,8 +27,9 @@ export tools_property_set() #meant to operate on name value pairs
     echo "${name}=${value}" >> $temp/"$filename"
     mv $temp/"$filename" "$filename"
 }
+export -f tools_property_set
 
-export tools_property_delete() #meant to operate on name value pairs
+tools_property_delete() #meant to operate on name value pairs
 {
     name="$1"
     filename="$2"
@@ -39,8 +39,9 @@ export tools_property_delete() #meant to operate on name value pairs
     cat "$filename" | grep -v ^${name}= > $temp/"$filename"
     mv $temp/"$filename" "$filename"
 }
+export -f tools_property_delete
 
-export tools_help() #usual
+tools_help() #usual
 {
         echo "Functions and options (for usage, run the command with no args):"
         echo object_add
@@ -54,22 +55,25 @@ export tools_help() #usual
         echo user_edit
         echo user_add
 }
+export -f tools_help
 
-
-export sync_pull() #here we use git and free github to its fullest extent :D
+sync_pull() #here we use git and free github to its fullest extent :D
 {
        #this will be called immediately when one of the function commands is run 
 	echo
 }
+export -f sync_pull
 
-export sync_push() # yup 
+sync_push() # yup 
 {
        #this will be called each time an object_ command is called
 	echo
 }
+export -f sync_push
 
-export install()
+install()
 {
         #simply move the real executable to a place in the default path (probably some bin)
 	echo
 }
+export -f install

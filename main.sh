@@ -14,22 +14,20 @@
 
 #there should be an installer that drops this in your bin so you can call it anywhere Remember to keep all paths absolute
 
-source tool.sh
-
-include globals
-include object
-include user
-include tool
+source tools.sh
+source globals.sh
+source objects.sh
+source user.sh
 
 
 
-printf "Welcome to mygit! Please enter your username (if you aren't setup yet, enter 'new' here and help on the command line): "
+printf "Welcome to myjira! Please enter your username (if you aren't setup yet, enter 'new' here and help on the command line): "
 read username
 
 export username="$username"
 
 while [ "$command" != "" ]; do 
-	printf "mygit> "
+	printf "myjira> "
 	read command
 	"$command"
 done
